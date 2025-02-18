@@ -369,7 +369,7 @@ class Message extends StatelessWidget {
             : TextDirection.ltr,
         children: [
           if (!currentUserIsAuthor && showUserAvatars) _avatarBuilder(),
-          if (currentUserIsAuthor && isLeftStatus) _statusIcon(context),
+          if (isLeftStatus) _statusIcon(context),
           ConstrainedBox(
             constraints: BoxConstraints(
               maxWidth: messageWidth.toDouble(),
@@ -406,7 +406,7 @@ class Message extends StatelessWidget {
               ],
             ),
           ),
-          if (currentUserIsAuthor && !isLeftStatus) _statusIcon(context),
+          if (!isLeftStatus) _statusIcon(context),
         ],
       ),
     );
